@@ -11,6 +11,7 @@ function ToDo() {
   function handleTodo(newToDoText) {
     setToDoText(newToDoText);
   }
+
   function addToDo() {
     const newToDoObj = {
       id: todoList.length,
@@ -30,7 +31,7 @@ function ToDo() {
     <div className="todo">
       <div className="todo__header">
         <InputField handleTodo={handleTodo} toDoText={toDoText} />
-        <Button btnTitle="Add" btnFunction={addToDo}></Button>
+        <Button btnTitle="Add" btnFunction={addToDo} id={"AddTodo"}></Button>
       </div>
       {todoList.map((elm) => {
         return (

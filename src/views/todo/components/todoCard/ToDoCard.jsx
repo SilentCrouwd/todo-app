@@ -15,10 +15,14 @@ function ToDoCard({ todoObj, todoArray, handleCheckState }) {
   }
 
   return (
-    <div className="todo-card" data-id={todoObj.id}>
+    <div className="todo-card">
       <Checkbox todoObj={todoObj} handleCheckboxChange={handleCheckboxChange} />
       <p className="todo-card__text">{todoObj.title}</p>
-      <Button className="btn btn__delete" btnTitle={"Löschen"}></Button>
+      <Button
+        id={todoObj.id}
+        className="btn btn__delete"
+        btnTitle={"Löschen"}
+      ></Button>
     </div>
   );
 }
