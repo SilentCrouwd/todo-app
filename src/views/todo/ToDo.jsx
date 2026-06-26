@@ -6,7 +6,7 @@ import { useState } from "react";
 
 function ToDo() {
   const [todoList, setTodoList] = useState([]);
-  // const [checked, setChecked] = useState(false);
+
   const [toDoText, setToDoText] = useState("");
   function handleTodo(newToDoText) {
     setToDoText(newToDoText);
@@ -26,7 +26,10 @@ function ToDo() {
   function handleCheckState(newTodoArr) {
     setTodoList(newTodoArr);
   }
-
+  function deleteTodo(TodoId) {
+    const newTodoArr = todoList.filter((todo) => todo.id !== TodoId);
+    setTodoList(newTodoArr);
+  }
   return (
     <div className="todo">
       <div className="todo__header">
@@ -40,6 +43,8 @@ function ToDo() {
             todoObj={elm}
             todoArray={todoList}
             handleCheckState={handleCheckState}
+            btnId={elm.id}
+            deleteTodo={deleteTodo}
           ></ToDoCard>
         );
       })}{" "}
