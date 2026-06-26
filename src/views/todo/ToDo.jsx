@@ -5,36 +5,40 @@ import Button from "../../Components/button/Button";
 import { useState } from "react";
 
 function ToDo() {
-  const [toDoList, setToDoList] = useState([]);
-
+  const [todoList, setTodoList] = useState([]);
+  // const [checked, setChecked] = useState(false);
   const [toDoText, setToDoText] = useState("");
-  function handleToDo(newToDoText) {
+  function handleTodo(newToDoText) {
     setToDoText(newToDoText);
   }
   function addToDo() {
-    console.log(toDoText);
     const newToDoObj = {
-      id: toDoList.length,
+      id: todoList.length,
       title: toDoText,
       complete: false,
     };
 
-    setToDoList([...toDoList, newToDoObj]);
+    setTodoList([...todoList, newToDoObj]);
+
+    setToDoText("");
+  }
+  function handleCheckState(newTodoArr) {
+    setTodoList(newTodoArr);
   }
 
   return (
     <div className="todo">
       <div className="todo__header">
-        <InputField addToDo={handleToDo} />
+        <InputField handleTodo={handleTodo} toDoText={toDoText} />
         <Button btnTitle="Add" btnFunction={addToDo}></Button>
       </div>
-      {toDoList.map((elm) => {
+      {todoList.map((elm) => {
         return (
           <ToDoCard
             key={elm.id}
-            id={elm.id}
-            toDoText={elm.title}
-            complete={elm.complete}
+            todoObj={elm}
+            todoArray={todoList}
+            handleCheckState={handleCheckState}
           ></ToDoCard>
         );
       })}{" "}

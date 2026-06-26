@@ -1,19 +1,20 @@
 import { useState } from "react";
 import "./InputField.css";
-function InputField({ addToDo }) {
+function InputField({ handleTodo, toDoText }) {
   const [inputValue, setInputValue] = useState("");
 
   function handleInputChange(changeEvent) {
     setInputValue(changeEvent.target.value);
+    handleTodo(changeEvent.target.value);
   }
-  addToDo(inputValue);
-  
+
   return (
     <div>
       <input
         className="todo-input"
         type="text"
         onChange={handleInputChange}
+        value={toDoText}
       ></input>
     </div>
   );
