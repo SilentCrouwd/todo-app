@@ -1,4 +1,23 @@
 .todo-input {
-  background-color: rgba(128, 128, 128, 0.253);
-  padding: 0.3rem;
+  cursor: text;
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: var(--box-color-1);
+  border: solid 1px var(--sec-color);
+  color: var(--text-color);
+  transition: all 0.5s ease;
+}
+.todo-input::placeholder {
+  color: var(--accent-color);
+}
+.todo-input:hover {
+  border: solid 1px var(--accent-color);
+}
+.todo-input:focus {
+  outline: none;
+  border: solid 1px var(--accent-color);
+}
+input {
+  cursor: pointer;
 }

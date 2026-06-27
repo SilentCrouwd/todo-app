@@ -32,22 +32,27 @@ function ToDo() {
   }
   return (
     <div className="todo">
+      <h1 className="todo__headline">Todo App React</h1>
+
       <div className="todo__header">
         <InputField handleTodo={handleTodo} toDoText={toDoText} />
         <Button btnTitle="Add" btnFunction={addToDo} id={"AddTodo"}></Button>
       </div>
-      {todoList.map((elm) => {
-        return (
-          <ToDoCard
-            key={elm.id}
-            todoObj={elm}
-            todoArray={todoList}
-            handleCheckState={handleCheckState}
-            btnId={elm.id}
-            deleteTodo={deleteTodo}
-          ></ToDoCard>
-        );
-      })}{" "}
+      <div className="todo__main">
+        {" "}
+        {todoList.map((elm) => {
+          return (
+            <ToDoCard
+              key={elm.id}
+              todoObj={elm}
+              todoArray={todoList}
+              handleCheckState={handleCheckState}
+              btnId={elm.id}
+              deleteTodo={deleteTodo}
+            ></ToDoCard>
+          );
+        })}{" "}
+      </div>
     </div>
   );
 }

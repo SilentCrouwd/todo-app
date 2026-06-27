@@ -13,6 +13,7 @@ function InputField({ handleTodo, toDoText }) {
       <input
         className="todo-input"
         type="text"
+        placeholder="Heute nichts zu tun?"
         onChange={handleInputChange}
         value={toDoText}
       ></input>

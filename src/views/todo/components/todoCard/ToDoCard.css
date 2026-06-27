@@ -1,13 +1,19 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 .todo-card {
+  width: 350px;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.8rem;
+  background-color: var(--glass-box);
+  border: solid 1px var(--glass-border);
+  backdrop-filter: blur(12px);
+  padding: 1rem 2rem;
+}
+
+.todo-card__text {
+  word-break: break-all;
+  overflow: hidden;
+  font-size: 1.5rem;
   padding: 0.5rem;
 }

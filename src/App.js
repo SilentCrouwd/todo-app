@@ -1,5 +1,5 @@
 import "./App.css";
-
+import "./global-variables.css";
 import ToDo from "./views/todo/ToDo.jsx";
 
 function App() {
