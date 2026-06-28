@@ -11,10 +11,18 @@ function ToDo() {
   function handleTodo(newToDoText) {
     setToDoText(newToDoText);
   }
-
+  function toggleTodoComplete(id) {
+    const updatedList = todoList.map((todo) => {
+      if (todo.id === id) {
+        return { ...todo, complete: !todo.complete };
+      }
+      return todo;
+    });
+    setTodoList(updatedList);
+  }
   function addToDo() {
     const newToDoObj = {
-      id: todoList.length,
+      id: Date.now(),
       title: toDoText,
       complete: false,
     };
@@ -22,9 +30,6 @@ function ToDo() {
     setTodoList([...todoList, newToDoObj]);
 
     setToDoText("");
-  }
-  function handleCheckState(newTodoArr) {
-    setTodoList(newTodoArr);
   }
   function deleteTodo(TodoId) {
     const newTodoArr = todoList.filter((todo) => todo.id !== TodoId);
@@ -49,7 +54,7 @@ function ToDo() {
                 key={elm.id}
                 todoObj={elm}
                 todoArray={todoList}
-                handleCheckState={handleCheckState}
+                toggleTodoComplete={toggleTodoComplete}
                 btnId={elm.id}
                 deleteTodo={deleteTodo}
               ></ToDoCard>
