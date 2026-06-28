@@ -32,7 +32,7 @@ function ToDo() {
   }
   return (
     <div className="todo">
-      <h1 className="todo__headline">Todo App React</h1>
+      <h1 className="todo__headline">Todo App test React</h1>
 
       <div className="todo__header">
         <InputField handleTodo={handleTodo} toDoText={toDoText} />
