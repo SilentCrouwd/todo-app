@@ -1,8 +1,8 @@
 .todo-card {
-  width: 350px;
-  position: relative;
+  width: 550px;
+
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 0.8rem;
   background-color: var(--glass-box);
@@ -12,8 +12,14 @@
 }
 
 .todo-card__text {
+  text-align: left;
+  width: 100%;
   word-break: break-all;
   overflow: hidden;
   font-size: 1.5rem;
   padding: 0.5rem;
+}
+.todo-complete {
+  text-decoration: line-through;
+  color: var(--sec-color);
 }

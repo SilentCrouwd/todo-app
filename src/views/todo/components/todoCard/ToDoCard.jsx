@@ -17,7 +17,11 @@ function ToDoCard({ todoObj, todoArray, handleCheckState, deleteTodo }) {
   return (
     <div className="todo-card">
       <Checkbox todoObj={todoObj} handleCheckboxChange={handleCheckboxChange} />
-      <p className="todo-card__text">{todoObj.title}</p>
+      <p
+        className={`todo-card__text ${todoObj.complete === true ? "todo-complete" : ""}`}
+      >
+        {todoObj.title}
+      </p>
       <Button
         id={todoObj.id}
         className="btn btn__delete"

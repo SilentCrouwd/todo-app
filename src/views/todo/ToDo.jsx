@@ -40,18 +40,22 @@ function ToDo() {
       </div>
       <div className="todo__main">
         {" "}
-        {todoList.map((elm) => {
-          return (
-            <ToDoCard
-              key={elm.id}
-              todoObj={elm}
-              todoArray={todoList}
-              handleCheckState={handleCheckState}
-              btnId={elm.id}
-              deleteTodo={deleteTodo}
-            ></ToDoCard>
-          );
-        })}{" "}
+        {todoList.length === 0 ? (
+          <p className="todo__placeholder">Heute nix los hier... </p>
+        ) : (
+          todoList.map((elm) => {
+            return (
+              <ToDoCard
+                key={elm.id}
+                todoObj={elm}
+                todoArray={todoList}
+                handleCheckState={handleCheckState}
+                btnId={elm.id}
+                deleteTodo={deleteTodo}
+              ></ToDoCard>
+            );
+          })
+        )}{" "}
       </div>
     </div>
   );
